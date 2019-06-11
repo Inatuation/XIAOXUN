@@ -1,79 +1,33 @@
 <template>
   <main>
-    <div class="newsList">
+    <router-link to="/recommlist" class="newsList">
       <figure>
-        <div class="newsList_txt">
+        <div @click="da" class="newsList_txt">
           <figcaption>如何有效辅助孩子调整情绪迎接期末考试？</figcaption>
           <p class="newsList_time">
             <span>小寻实验室</span>
             <span>今天</span>
           </p>
         </div>
-        <img src="../../assets/1.jpg" alt>
+        <img src="../../assets/images/CrecomImg.jpg" alt>
       </figure>
-    </div>
-    <div class="newsList">
-      <figure>
-        <div class="newsList_txt">
-          <figcaption>如何有效辅助孩子调整情绪迎接期末考试？</figcaption>
-          <p class="newsList_time">
-            <span>小寻实验室</span>
-            <span>今天</span>
-          </p>
-        </div>
-        <img src="../../assets/1.jpg" alt>
-      </figure>
-    </div>
-    <div class="newsList">
-      <figure>
-        <div class="newsList_txt">
-          <figcaption>如何有效辅助孩子调整情绪迎接期末考试？</figcaption>
-          <p class="newsList_time">
-            <span>小寻实验室</span>
-            <span>今天</span>
-          </p>
-        </div>
-        <img src="../../assets/1.jpg" alt>
-      </figure>
-    </div>
-    <div class="newsList">
-      <figure>
-        <div class="newsList_txt">
-          <figcaption>如何有效辅助孩子调整情绪迎接期末考试？</figcaption>
-          <p class="newsList_time">
-            <span>小寻实验室</span>
-            <span>今天</span>
-          </p>
-        </div>
-        <img src="../../assets/1.jpg" alt>
-      </figure>
-    </div>
-    <div class="newsList">
-      <figure>
-        <div class="newsList_txt">
-          <figcaption>如何有效辅助孩子调整情绪迎接期末考试？</figcaption>
-          <p class="newsList_time">
-            <span>小寻实验室</span>
-            <span>今天</span>
-          </p>
-        </div>
-        <img src="../../assets/1.jpg" alt>
-      </figure>
-    </div>
-    <div class="newsList">
-      <figure>
-        <div class="newsList_txt">
-          <figcaption>如何有效辅助孩子调整情绪迎接期末考试？</figcaption>
-          <p class="newsList_time">
-            <span>小寻实验室</span>
-            <span>今天</span>
-          </p>
-        </div>
-        <img src="../../assets/1.jpg" alt>
-      </figure>
-    </div>
+    </router-link>
   </main>
 </template>
+
+<script>
+export default {
+  methods : {
+    da(){
+      this.$store.state.homeList = {
+        logo : true,
+        footers : false,
+      }
+    }
+  }
+}
+</script>
+
 
 <style lang="scss" scoped>
 main {
@@ -82,12 +36,13 @@ main {
   .newsList {
     height: 110px;
     width: 100%;
+    display: block;
     padding-top: 10px;
     border-bottom: 1px solid #ccc;
     figure {
       width: 95%;
-      height: 110px;
       margin: 0 auto;
+      overflow: hidden;
       img {
         float: left;
         width: 110px;
@@ -95,7 +50,7 @@ main {
       }
       .newsList_txt {
         float: right;
-        height: 110px;
+        height: 90px;
         position: relative;
         figcaption {
           width: 240px;
@@ -109,7 +64,7 @@ main {
         color: #b7b7b7;
         font-size: 12px;
         position: absolute;
-        bottom: 18px;
+        bottom: 0px;
         left: 0;
         span {
           margin-right: 10px;

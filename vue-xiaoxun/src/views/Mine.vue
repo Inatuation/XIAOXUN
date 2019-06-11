@@ -1,5 +1,15 @@
 <template>
   <div class="about">
-    <h1>This is a mine</h1>
+    <Emine/>
   </div>
 </template>
+
+
+<script>
+import Emine from '../components/Emine';
+export default {
+  components : {
+    Emine,
+  }
+}
+</script>

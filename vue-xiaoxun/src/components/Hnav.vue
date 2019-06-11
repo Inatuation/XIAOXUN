@@ -1,8 +1,8 @@
 <template>
     <nav>
         <ul>
-            <li v-for="(a,index) in navList" :key="index" class="Navactive">
-                <router-link :to="a.rout" v-text="a.name"></router-link>
+            <li v-for="(a,index) in navList" :key="index" @click="actFn(index)" :class="index == act? 'Navactive' : ''">
+                <router-link :to="a.rout" v-text="a.tab"></router-link>
             </li>
         </ul>
     </nav>
@@ -13,29 +13,35 @@ export default {
     data(){
         return {
             navList : [{
-                name : '关注',
+                tab : '关注',
                 rout : 'cfollow'
             },{
-                name : '推荐',
-                rout : 'crecom'
+                tab : '推荐',
+                rout : '',
             },{
-                name : '活动',
+                tab : '活动',
                 rout : 'cactivity'
             },{
-                name : '百科',
+                tab : '百科',
                 rout : 'cency'
             },{
-                name : '学习',
+                tab : '学习',
                 rout : 'cstudy'
             },{
-                name : '素质',
+                tab : '素质',
                 rout : 'cquality'
             },{
-                name : '家庭',
+                tab : '家庭',
                 rout : 'cfamily'
             },],
+            act : 1,
         }
-    },      
+    }, 
+    methods : {
+        actFn(index){
+            this.act = index;
+        }
+    }     
 }
 </script>
 

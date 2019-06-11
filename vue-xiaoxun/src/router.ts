@@ -28,7 +28,7 @@ export default new Router({
           name: 'cfollow',
           component: Cfollow,
         },{
-          path: 'crecom',
+          path: '',
           name: 'crecom',
           component: Crecom,
         },{

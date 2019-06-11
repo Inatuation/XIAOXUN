@@ -4,7 +4,7 @@
     <keep-alive>
       <router-view/>
     </keep-alive>
-    <Hfooter/>
+    <Hfooter v-if="footerFn()"/>
   </div>
 </template>
 
@@ -19,7 +19,16 @@ export default Vue.extend({
     Hheader,
     Hfooter,
   },
- 
+  methods : {
+    footerFn(){
+      return this.$store.state.homeList.footers;
+    }
+  },
+  // mounted(){
+  //   console.log(this.$router.options.routes[0].children[1])
+  //   this.$router.options.routes[0].children[1].path = 'crecom'
+  //   console.log(this.$router.options.routes[0].children[1])
+  // },
 });
 </script>
 
